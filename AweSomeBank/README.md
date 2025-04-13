@@ -1,22 +1,24 @@
-AwesomeGIC Bank System
+# AwesomeGIC Bank System
+
 A simple Java console application that simulates a banking system with account management, transaction processing, and interest calculation capabilities.
-Table of Contents
 
-Features
-Project Structure
-Architecture Benefits
-Running the Application
-Testing
+## Table of Contents
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Architecture Benefits](#architecture-benefits)
+- [Running the Application](#running-the-application)
+- [Testing](#testing)
 
-Features
+## Features
 
-Bank Account Management: Create and manage bank accounts.
-Transaction Processing: Handle deposits and withdrawals with validation.
-Interest Rules: Define and manage interest rate rules with effective dates.
-Interest Calculation: Automatically calculate interest based on daily balances and applicable rules.
-Monthly Statements: Generate account statements for a specific month, including transaction history and applied interest.
+- **Bank Account Management**: Create and manage bank accounts.
+- **Transaction Processing**: Handle deposits and withdrawals with validation.
+- **Interest Rules**: Define and manage interest rate rules with effective dates.
+- **Interest Calculation**: Automatically calculate interest based on daily balances and applicable rules.
+- **Monthly Statements**: Generate account statements for a specific month, including transaction history and applied interest.
 
-Project Structure
+## Project Structure
+```
 com.awesome.gic
 ├── interfaces/
 │   ├── AccountService.java
@@ -37,40 +39,47 @@ com.awesome.gic
 │   ├── AccountServiceTest.java
 │   ├── InterestServiceTest.java
 │   └── TransactionServiceTest.java
+```
 
-Architecture Benefits
-Interface-based Design
+## Architecture Benefits
+
+### Interface-based Design
+
 The project uses interface-based design with separate interfaces and implementations for services. This approach offers several advantages:
 
-Loose Coupling: Components depend on interfaces, not concrete implementations, making the system more flexible.
-Testability: Interfaces can be easily mocked for unit testing.
-Extensibility: New implementations can be added without changing client code.
-Maintainability: Clear separation of concerns makes code easier to understand and maintain.
-Parallel Development: Teams can work on different implementations simultaneously.
+1. **Loose Coupling**: Components depend on interfaces, not concrete implementations, making the system more flexible.
+2. **Testability**: Interfaces can be easily mocked for unit testing.
+3. **Extensibility**: New implementations can be added without changing client code.
+4. **Maintainability**: Clear separation of concerns makes code easier to understand and maintain.
+5. **Parallel Development**: Teams can work on different implementations simultaneously.
 
-Service Layer Implementation
+### Service Layer Implementation
+
 The service layer pattern provides these benefits:
 
-Business Logic Encapsulation: Business rules stay independent of UI or data access logic.
-Single Responsibility: Each service focuses on a specific domain (accounts, transactions, interest).
-Reusability: Services can be reused across different parts of the application.
-Centralized Logic: Business rules are implemented in one place, avoiding duplication.
-Simplified Testing: Service-focused tests can verify business logic in isolation.
+1. **Business Logic Encapsulation**: Business rules stay independent of UI or data access logic.
+2. **Single Responsibility**: Each service focuses on a specific domain (accounts, transactions, interest).
+3. **Reusability**: Services can be reused across different parts of the application.
+4. **Centralized Logic**: Business rules are implemented in one place, avoiding duplication.
+5. **Simplified Testing**: Service-focused tests can verify business logic in isolation.
 
-Running the Application
+## Running the Application
 
-Clone the repository
-Compile the Java files
-Run the BankSystem main class
+1. Clone the repository
+2. Compile the Java files
+3. Run the `BankSystem` class
 
 The application provides a console interface with the following options:
+- `T`: Input transactions
+- `I`: Define interest rules
+- `P`: Print statement
+- `Q`: Quit
 
-T: Input transactions
-I: Define interest rules
-P: Print statement
-Q: Quit
+## Testing
 
-Testing
-The project includes comprehensive JUnit tests for all service classes and utilities. Each service method is tested to ensure edge cases are handled correctly.
+The project includes comprehensive JUnit tests for all service classes and utilities. Each service method is tested to ensure proper functionality and edge cases are handled correctly.
+
 To run tests:
+```
 mvn test
+```
